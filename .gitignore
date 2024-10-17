@@ -1,0 +1,4 @@
+./EKS-TF/.terraform
+./EKS-TF/.terraform.lock.hcl
+./Jenkins/.terraform
+./Jenkins/.terraform.lock.hcl
