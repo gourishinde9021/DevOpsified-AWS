@@ -33,7 +33,7 @@ resource "aws_subnet" "public-subnet" {
   map_public_ip_on_launch = true
 
   tags = {
-    Name = "${var.public-sub-name}-${count.index + 1}"
+    Name = "${var.pub-sub-name}-${count.index + 1}"
     Env = var.env
     "kubernetes.io/cluster/${local.cluster-name}" = "owned"
     "kubernetes.io/role/elb" = 1
@@ -43,7 +43,7 @@ resource "aws_subnet" "public-subnet" {
 }
 
 resource "aws_subnet" "private-subnet" {
-  count = var.pri-sub-name
+  count = var.pri-subnet-count
   vpc_id = aws_vpc.vpc.id
   cidr_block = element(var.pri-cidr-block, count.index)
   availability_zone = element(var.pri-availability-zone, count.index)
@@ -97,7 +97,7 @@ resource "aws_nat_gateway" "ngw" {
   subnet_id = aws_subnet.public-subnet[0].id
 
   tags = {
-    Name = var.ngw-name.id
+    Name = var.ngw-name
   }
   depends_on = [ aws_vpc.vpc,
   aws_eip.ngw_eip ]
