@@ -2,7 +2,8 @@
 ./EKS-TF/.terraform.lock.hcl
 ./Jenkins-TF/.terraform
 ./Jenkins-TF/.terraform.lock.hcl
-
+./EKS-TF/eks/.terraform
+./EKS-TF/eks/.terraform.lock.hcl
 
 # .tfstate files
 *.tfstate
