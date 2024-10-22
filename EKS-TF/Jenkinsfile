@@ -25,6 +25,7 @@ pipeline {
         stage('Init') {
             steps {
                 withAWS(credentials: 'aws-creds', region: 'ap-south-1') {
+                sh 'pwd'
                 sh 'terraform -chdir=eks/ init'
                 }
             }
