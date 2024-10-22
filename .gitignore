@@ -10,5 +10,5 @@
 *.tfstate.*
 */*.tfstate
 */*.tfstate.*
-
+*/*/*.tfstate
 */.terraform/*
